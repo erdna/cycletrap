@@ -16,7 +16,8 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDpmXhmrFScZ_MLIA-6fvW7gRh4K-gV670"/>
+            android:value="AIzaSyDpmXhmrFScZ_MLIA-6fvW7gRh4K-gV670" />
+
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
@@ -30,8 +31,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".initial.InitialActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_initial"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
-
-
 
 </manifest>
