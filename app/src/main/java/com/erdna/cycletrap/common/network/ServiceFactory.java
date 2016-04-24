@@ -1,4 +1,4 @@
-package com.erdna.cycletrap;
+package com.erdna.cycletrap.common.network;
 
 import retrofit.RestAdapter;
 

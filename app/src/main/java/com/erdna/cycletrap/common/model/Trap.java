@@ -1,4 +1,4 @@
-package com.erdna.cycletrap.model;
+package com.erdna.cycletrap.common.model;
 
 /**
  * Created by André Nitzschke on 23/04/16.

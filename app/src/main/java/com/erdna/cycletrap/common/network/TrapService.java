@@ -1,6 +1,6 @@
-package com.erdna.cycletrap;
+package com.erdna.cycletrap.common.network;
 
-import com.erdna.cycletrap.model.Trap;
+import com.erdna.cycletrap.common.model.Trap;
 
 import java.util.List;
 

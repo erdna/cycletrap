@@ -3,7 +3,9 @@ package com.erdna.cycletrap;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.erdna.cycletrap.model.Trap;
+import com.erdna.cycletrap.common.model.Trap;
+import com.erdna.cycletrap.common.network.ServiceFactory;
+import com.erdna.cycletrap.common.network.TrapService;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

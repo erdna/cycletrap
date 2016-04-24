@@ -19,7 +19,7 @@
             android:value="AIzaSyDpmXhmrFScZ_MLIA-6fvW7gRh4K-gV670" />
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".initial.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
             android:name=".MainActivity"
@@ -31,11 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".initial.InitialActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_initial"
-            android:theme="@style/FullscreenTheme"></activity>
+        <activity android:name=".initial.InitialActivity"></activity>
     </application>
 
 </manifest>
