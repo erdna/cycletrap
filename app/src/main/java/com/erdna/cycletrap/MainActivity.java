@@ -11,20 +11,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-import com.erdna.cycletrap.common.model.Trap;
-import com.erdna.cycletrap.common.network.ServiceFactory;
-import com.erdna.cycletrap.common.network.TrapService;
+import com.erdna.cycletrap.addtrap.AddTrapActivity;
 import com.erdna.cycletrap.initial.InitialActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -82,26 +75,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @OnClick(R.id.add_trap)
     public void addTrap(View view) {
 
-        TrapService service = ServiceFactory.createRetrofitService(TrapService.class, TrapService.BASE_URL);
-        Trap trap = new Trap();
-        trap.latitude = 51.347939;
-        trap.longitude = 12.3724964;
-        trap.name = "Teich im Rosenthal";
-        Observable<Trap> postTrap = service.ceateTrap(trap);
-        postTrap.subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<Trap>() {
-                    @Override
-                    public void call(Trap trap) {
-                        Toast.makeText(MainActivity.this, "added " + trap.name, Toast.LENGTH_SHORT).show();
-                    }
-                }, new Action1<Throwable>() {
-                    @Override
-                    public void call(Throwable throwable) {
-                        Toast.makeText(MainActivity.this, throwable.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, AddTrapActivity.class));
 
-                    }
-                });
+//        TrapService service = ServiceFactory.createRetrofitService(TrapService.class, TrapService.BASE_URL);
+//        Trap trap = new Trap();
+//        trap.latitude = 51.347939;
+//        trap.longitude = 12.3724964;
+//        trap.name = "Teich im Rosenthal";
+//        Observable<Trap> postTrap = service.ceateTrap(trap);
+//        postTrap.subscribeOn(Schedulers.newThread())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Action1<Trap>() {
+//                    @Override
+//                    public void call(Trap trap) {
+//                        Toast.makeText(MainActivity.this, "added " + trap.name, Toast.LENGTH_SHORT).show();
+//                    }
+//                }, new Action1<Throwable>() {
+//                    @Override
+//                    public void call(Throwable throwable) {
+//                        Toast.makeText(MainActivity.this, throwable.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                });
 
 
     }

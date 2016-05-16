@@ -46,7 +46,6 @@ public class TrapMapFragment extends SupportMapFragment implements OnMapReadyCal
                     @Override
                     public void onError(Throwable e) {
                         Toast.makeText(getContext(), "error", Toast.LENGTH_SHORT).show();
-
                     }
 
                     @Override
