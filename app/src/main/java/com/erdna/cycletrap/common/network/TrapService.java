@@ -5,7 +5,9 @@ import com.erdna.cycletrap.common.model.Trap;
 
 import java.util.List;
 
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import rx.Observable;
 
 /**
@@ -17,5 +19,8 @@ public interface TrapService {
 
     @GET("/traps")
     Observable<List<Trap>> getTraps();
+
+    @POST("/traps")
+    Observable<Trap> ceateTrap(@Body Trap trap);
 
 }
