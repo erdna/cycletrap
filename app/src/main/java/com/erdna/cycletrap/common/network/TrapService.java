@@ -1,10 +1,11 @@
 package com.erdna.cycletrap.common.network;
 
+import com.erdna.cycletrap.BuildConfig;
 import com.erdna.cycletrap.common.model.Trap;
 
 import java.util.List;
 
-import retrofit.http.GET;
+import retrofit2.http.GET;
 import rx.Observable;
 
 /**
@@ -12,7 +13,7 @@ import rx.Observable;
  */
 public interface TrapService {
 
-    String SERVICE_ENDPOINT = "http://192.168.1.171:8080";
+    String BASE_URL = BuildConfig.API_BASE_URL;
 
     @GET("/traps")
     Observable<List<Trap>> getTraps();

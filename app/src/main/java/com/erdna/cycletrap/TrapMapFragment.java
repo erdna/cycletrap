@@ -31,15 +31,8 @@ public class TrapMapFragment extends SupportMapFragment implements OnMapReadyCal
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-
-
-    }
-
-    @Override
     public void onMapReady(final GoogleMap googleMap) {
-        TrapService service = ServiceFactory.createRetrofitService(TrapService.class, TrapService.SERVICE_ENDPOINT);
+        TrapService service = ServiceFactory.createRetrofitService(TrapService.class, TrapService.BASE_URL);
 
         service.getTraps()
                 .subscribeOn(Schedulers.newThread())
@@ -68,8 +61,6 @@ public class TrapMapFragment extends SupportMapFragment implements OnMapReadyCal
                         }
 
                         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(last, 12));
-
-
                     }
                 });
 
